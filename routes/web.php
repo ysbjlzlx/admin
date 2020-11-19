@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\IndexController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,3 +27,5 @@ Route::middleware(['auth'])->group(function () {
     Route::post('logout', 'Web\LoginController@logout')->name('logout');
     Route::resource('posts', 'PostsController');
 });
+
+Route::get('/', [IndexController::class, 'index']);
