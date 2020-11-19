@@ -1,7 +1,11 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\PostController;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\Web\LoginController;
+use App\Http\Controllers\Web\RegisterController;
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,19 +17,17 @@ use App\Http\Controllers\IndexController;
 |
 */
 
-Route::get('/', 'IndexController@index')->name('index');
-Route::get('api', 'IndexController@openapi')->name('openapi');
-Route::get('storage/{filename}', 'IndexController@storage');
+Route::get('/', [IndexController::class, 'index'])->name('index');
+Route::get('api', [IndexController::class, 'openapi'])->name('openapi');
+Route::get('storage/{filename}', [IndexController::class, 'storage']);
 
-Route::get('login', 'Web\LoginController@redirectLoginView')->name('login');
-Route::post('login', 'Web\LoginController@login');
+Route::get('login', [LoginController::class, 'redirectLoginView'])->name('login');
+Route::post('login', [LoginController::class, 'login']);
 
-Route::get('register', 'Web\RegisterController@showRegistrationForm')->name('register');
-Route::post('register', 'Web\RegisterController@register');
+Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('register', [RegisterController::class, 'register']);
 
 Route::middleware(['auth'])->group(function () {
-    Route::post('logout', 'Web\LoginController@logout')->name('logout');
-    Route::resource('posts', 'PostsController');
+    Route::post('logout', [LoginController::class, 'logout'])->name('logout');
+    Route::resource('posts', PostController::class);
 });
-
-Route::get('/', [IndexController::class, 'index']);
