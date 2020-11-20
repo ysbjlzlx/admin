@@ -11,9 +11,9 @@ class IndexController extends Controller
         return view('index');
     }
 
-    public function openapi()
+    public function swagger()
     {
-        return view('openapi');
+        return view('swagger');
     }
 
     public function storage(string $filename)

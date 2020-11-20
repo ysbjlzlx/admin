@@ -4,36 +4,7 @@ info:
   description: Title
   version: 1.0.0
 paths:
-  /api/random/string:
-    get:
-      description: 获取随机字符串
-      parameters:
-        - name: length
-          in: query
-          description: 生成随机字符串的长度
-          schema:
-            type: integer
-            default: 32
-            minimum: 1
-        - name: size
-          in: query
-          description: 生成随机字符串的大小
-          schema:
-            type: integer
-            default: 1
-            minimum: 1
-      responses:
-        200:
-          description: 由字符串组成的数组
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  type: string
-            text/plain:
-              schema:
-                type: string
+
 
 
 

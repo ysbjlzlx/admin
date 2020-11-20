@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [IndexController::class, 'index'])->name('index');
-Route::get('api', [IndexController::class, 'openapi'])->name('openapi');
+Route::get('api', [IndexController::class, 'swagger'])->name('swagger');
 Route::get('storage/{filename}', [IndexController::class, 'storage']);
 
 Route::get('login', [LoginController::class, 'redirectLoginView'])->name('login');

@@ -18,7 +18,7 @@
             presets: [SwaggerUIBundle.presets.apis],
             plugins: [SwaggerUIBundle.plugins.DownloadUrl],
             validatorUrl: "https://validator.swagger.io/validator",
-            url: "/openapi.yaml",
+            url: "{{ url('/storage/openapi.yaml') }}",
         });
     };
 </script>
