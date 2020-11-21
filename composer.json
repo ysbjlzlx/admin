@@ -16,6 +16,7 @@
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
         "simplesoftwareio/simple-qrcode": "^4.1",
+        "spomky-labs/otphp": "^10.0",
         "vinkla/hashids": "^9.0"
     },
     "require-dev": {
