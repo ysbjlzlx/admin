@@ -4,7 +4,7 @@ use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\PostController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\HealthController;
-use App\Http\Controllers\RandomController;
+use App\Http\Controllers\Tool\RandomController;
 use Illuminate\Support\Facades\Route;
 
 Route::post('user/register', [AuthController::class, 'register']);

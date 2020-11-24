@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Tool;
 
+use App\Http\Controllers\Controller;
 use App\Http\Services\RandomService;
 use Illuminate\Http\Request;
 
