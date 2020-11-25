@@ -13,13 +13,13 @@
 </head>
 <body>
     <header>
-        @include('includes.navbar')
+        @include('admin.includes.navbar')
     </header>
     <main class="ui container">
         @yield("content")
     </main>
     <footer>
-        @include('includes.footer')
+        @include('admin.includes.footer')
     </footer>
 <script src="{{asset('/libs/jquery/3.5.1/jquery.js')}}"></script>
 <script src="{{asset('/libs/fomantic-ui/2.8.7/semantic.js')}}"></script>
