@@ -42,11 +42,18 @@ class LoginController extends Controller
             throw ValidationException::withMessages(['password' => '密码错误']);
         }
         $totp = TOTP::create($admin->totp_secret);
-        if (!$totp->verify($request->input('otp'))) {
+        if (!$totp->verify($request->input('otp'), null, 1)) {
             throw ValidationException::withMessages(['otp' => '二次校验失败']);
         }
-        Auth::login($admin);
+        Auth::guard('admin')->login($admin, true);
 
         return redirect()->route('admin.dashboard');
+    }
+
+    public function logout()
+    {
+        Auth::guard('admin')->logout();
+
+        return redirect()->route('admin.login');
     }
 }

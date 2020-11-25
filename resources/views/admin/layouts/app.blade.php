@@ -15,7 +15,7 @@
     <header>
         @include('admin.includes.navbar')
     </header>
-    <main class="ui container">
+    <main>
         @yield("content")
     </main>
     <footer>

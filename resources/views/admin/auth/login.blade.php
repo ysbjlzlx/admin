@@ -4,7 +4,7 @@
     <div class="ui basic segment">
 
     </div>
-    <div class="ui three column grid">
+    <div class="ui three column grid container">
         <div class="right floated column">
             <form class="ui form segment @if($errors->any()) error @endif" method="post" action="{{ route('admin.login') }}">
                 @csrf
