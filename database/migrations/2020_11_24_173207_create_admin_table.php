@@ -19,6 +19,7 @@ class CreateAdminTable extends Migration
             $table->string('email')->default('')->comment('邮箱');
             $table->string('password')->default('')->comment('密码');
             $table->string('totp_secret')->default('')->comment('TOTP Secret');
+            $table->rememberToken();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate()->comment('更新时间');
             $table->timestamp('created_at')->useCurrent()->comment('创建时间');
             $table->unique('username', 'uk_username');

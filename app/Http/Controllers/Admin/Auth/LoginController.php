@@ -30,7 +30,7 @@ class LoginController extends Controller
         $rules = [
             'email' => 'required|email',
             'password' => 'required|string|min:6',
-            'otp' => 'required|number|digits:6',
+            'otp' => 'required|numeric|digits:6',
         ];
         $request->validate($rules);
 

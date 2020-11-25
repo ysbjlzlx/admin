@@ -1,12 +1,7 @@
 <div>
     <div class="ui menu">
         <a class="item" href="{{route('index')}}">首页</a>
-        @guest()
-            <div class="right menu">
-                <a class="item" href="{{route('register')}}">注册</a>
-                <a class="item" href="{{route('login')}}">登录</a>
-            </div>
-        @else()
+        @auth()
             <div class="right menu">
                 <div class="item">{{ Auth::user()->email }}</div>
                 <a class="item" href="{{ route('logout') }}"
@@ -17,6 +12,6 @@
                     @csrf
                 </form>
             </div>
-        @endguest
+        @endauth
     </div>
 </div>
