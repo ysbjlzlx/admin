@@ -8,7 +8,7 @@ class IndexController extends Controller
 {
     public function index()
     {
-        return view('index');
+        return view('user.index');
     }
 
     public function swagger()
