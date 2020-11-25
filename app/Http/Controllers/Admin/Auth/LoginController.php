@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Admin\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Services\AdminService;
 use App\Models\AdminModel;
-use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 use OTPHP\TOTP;
@@ -47,6 +47,6 @@ class LoginController extends Controller
         }
         Auth::login($admin);
 
-        return redirect()->to('home');
+        return redirect()->route('admin.dashboard');
     }
 }
