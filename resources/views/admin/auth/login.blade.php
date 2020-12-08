@@ -10,15 +10,15 @@
                 @csrf
                 <div class="field">
                     <label for="email">邮箱</label>
-                    <input id="email" type="text" name="email" placeholder="邮箱" value="{{ old('email') }}">
+                    <input id="email" type="text" name="email" placeholder="邮箱" value="{{ old('email') }}" required>
                 </div>
                 <div class="field">
                     <label for="password">密码</label>
-                    <input id="password" type="password" name="password" placeholder="密码" value="{{old('password')}}">
+                    <input id="password" type="password" name="password" placeholder="密码" required>
                 </div>
                 <div class="field">
                     <label for="otp">二次验证</label>
-                    <input id="otp" type="number" name="otp" placeholder="二次验证码" value="">
+                    <input id="otp" type="number" name="otp" placeholder="二次验证码" required>
                 </div>
                 <button class="ui button" type="submit">登录</button>
                 @if ($errors->any())
@@ -33,6 +33,4 @@
             </form>
         </div>
     </div>
-
-
 @endsection
