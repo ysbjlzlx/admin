@@ -13,7 +13,7 @@ class LoginController extends Controller
 {
     public function redirectLoginView()
     {
-        return view('auth.login');
+        return view('user.auth.login');
     }
 
     public function login(Request $request, UserService $userService, AuthService $authService)
